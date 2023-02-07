@@ -6,3 +6,4 @@ print("""
 	These are triple quotes!
 
 """)
+print('Sum is:', 7 + 10)
