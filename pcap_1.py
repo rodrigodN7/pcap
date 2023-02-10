@@ -19,6 +19,7 @@ print("""
 """)
 print('Sum is:', 7 + 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #end keyword
 print("My name is", "Python.", end=" ")
@@ -30,5 +31,7 @@ print("My", "Name", "is", "Rodrigo", sep="-")
 #literals and variables
 print(type("2")) 
 print(type(2))
+=======
+>>>>>>> e68c1830f113efecd845edff02a68c703f9d4c09
 =======
 >>>>>>> e68c1830f113efecd845edff02a68c703f9d4c09
