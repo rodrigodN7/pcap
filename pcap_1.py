@@ -89,4 +89,37 @@ print("\nAddition and substratcion")
 print(7 + 5)
 print(7 + 5.)
 print(7. + 5)
-print(7. + 5.)
+print(7. - 5.)
+print(7. - 5.)
+print(7. - 5.)
+print(7. - 5.)
+print(5 - 7)
+print(5 - 7.)
+print(5. - 7)
+print(5. - 7.)
+print("""
+Operator precedence
+**
++,-	unuary	note:unary operators located next to the right of the power operator bind more strongly
+*, /, //, %
++,-	binary
+""")
+print(2 * 3 % 5)
+print((5 * ((25 % 13) + 100) / (2 * 13)) // 2)
+print("The exponentiation operator uses right-sided binding")
+print(2 ** 3 ** 2)
+print("Subexpressions in parentheses are always calculated first")
+print(15 - 1 * (5 * (1 + 2)))
+print("""
+
+	Variables:
+
+    the name of the variable must be composed of upper-case or lower-case letters, digits, and the character _ (underscore)
+    the name of the variable must begin with a letter;
+    the underscore character is a letter;
+    upper- and lower-case letters are treated as different (a little differently than in the real world - Alice and ALICE 
+    are the same first names, but in Python they are two different variable names, and consequently, two different variables);
+    the name of the variable must not be any of Python's reserved words (the keywords - we'll explain more about this soon).
+
+
+""")
