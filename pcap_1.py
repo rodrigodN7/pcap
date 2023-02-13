@@ -123,3 +123,39 @@ print("""
 
 
 """)
+print('Python keywords')
+python_keywords = ['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+print(python_keywords)
+my_var = 'concatenation'
+print("My first " + my_var)
+my_new = my_var * 2 
+print(my_new)
+num_var = 7
+print(num_var + 10)
+print("Shortcut operators")
+x = 7
+x += 10
+print(x)
+x -= 10
+print(x)
+x *= 10
+print(x)
+x //= 10
+print(x)
+x /= 10
+print(x)
+x %= 10
+print(x)
+x = 2
+x **= 10
+print(x)
+print("Input functiuon")
+my_input = int(input('Enter your first integer:'))
+my_input2 = int(input('Enter second integer:'))
+print('Here are your maths:\n',
+
+	'Addition:', my_input + my_input2, '\n',
+	'Substraction:', my_input - my_input2, '\n',
+	'Multiplication:', my_input * my_input2, '\n',
+	'Division:', my_input / my_input2, '\n'
+)
