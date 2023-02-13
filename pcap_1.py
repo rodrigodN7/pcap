@@ -159,3 +159,9 @@ print('Here are your maths:\n',
 	'Multiplication:', my_input * my_input2, '\n',
 	'Division:', my_input / my_input2, '\n'
 )
+print('Casting')
+x = 7
+y = str(x)
+print(x,type(x))
+print(y,type(y))
+
