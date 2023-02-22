@@ -120,8 +120,112 @@ def leapcomm():
 		else:
 			print("Leap year")
 
+"""While loop"""
+
+def while1():
+	try:
+		clear()
+		# Store the current largest number here.
+		largest_number = -999999999
+
+		# Input the first value.
+		number = int(input("Enter a number or type -1 to stop: "))
+		
+		# If the number is not equal to -1, continue.
+		while number != -1:
+		# Is number larger than largest_number?
+			if number > largest_number:
+	        # Yes, update largest_number.
+				largest_number = number
+	        # Input the next number.
+			number = int(input("Enter a number or type -1 to stop: "))
+
+	        # Print the largest number.
+			print("The largest number is:", largest_number)
+	except:
+        	print('invalid')
+
+"""While odd even"""
+# A program that reads a sequence of numbers
+# and counts how many numbers are even and how many are odd.
+# The program terminates when zero is entered.
+def woddeven():
+
+	try:
+		odd_numbers = 0
+		even_numbers = 0
+
+		# Read the first number.
+		number = int(input("Enter a number or type 0 to stop: "))
+
+		# 0 terminates execution.
+		while number != 0:
+		    # Check if the number is odd.
+			if number % 2 == 1:
+			# Increase the odd_numbers counter.
+				odd_numbers += 1
+			else:
+			# Increase the even_numbers counter.
+				even_numbers += 1
+			# Read the next number.
+			number = int(input("Enter a number or type 0 to stop: "))
+
+		# Print results.
+		print("Odd numbers count:", odd_numbers)
+		print("Even numbers count:", even_numbers)
+
+	except:
+		print("Error")
+
+"""Counter controlled loop"""
+
+def countvar():
+
+	try:
+		counter = 5
+	
+		while counter:
+			print("Inside the loop", counter)
+			counter -= 1
+		print("Outside the loop", counter)
+	except:
+		print("Error")
+
+"""guess the secret number"""
+
+def secret_num():
+	secret_number = 777
+
+	print(
+"""
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+	""")
+	while True:
+		try:
+			my_int = int(input('Enter an int: '))  
+			while secret_number != my_int:
+				try:    
+					print('Haha! You\'re stucked in my endless loop')
+					my_int = int(input('Enter an int: '))
+				except:
+					print('That is not a number!')
+			print('Correct!')
+			break
+		except:
+			print('That is not a number!')
+
 if_1()
 minmax()
 spathi()
 my_tax()
 leapcomm()
+while1()
+woddeven()
+countvar()
+secret_num()
