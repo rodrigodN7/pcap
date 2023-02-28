@@ -292,7 +292,9 @@ def knot_km():
 				print('Invalid data')
 				input('Press enter to continue!')
 
-	print('Bye!')
+	clear()
+	input('Bye!\n Press enter to finish')
+	clear()
 
 			
 #if_1()
