@@ -272,10 +272,29 @@ def break_cont():
     		print("Inside the loop.", i)
 	print("Outside the loop.")
 
+def knot_km():
 
+	while True:
+		clear()
+		number = input("type quit to exit!\nenter knots to convert: ")
+		data = str(number)
 
+		if data == 'quit':
+			break
+		else:
+			try:
+				clear()
+				data = float(number)
+				print(data, 'knots = ',round(data * 1.852, 2), 'kph')
+				input('Press any key to continue!')
+			except:
+				clear()
+				print('Invalid data')
+				input('Press enter to continue!')
 
+	print('Bye!')
 
+			
 #if_1()
 #minmax()
 #spathi()
@@ -290,4 +309,5 @@ def break_cont():
 #for3()
 #for4()
 #my_mississipi()
-break_cont()
+#break_cont()
+knot_km()
