@@ -1,6 +1,7 @@
 #!/ur/bin/env python3
 
 import os
+import time
 
 clear = lambda: os.system('clear')
 clear()
@@ -220,12 +221,73 @@ def secret_num():
 		except:
 			print('That is not a number!')
 
-if_1()
-minmax()
-spathi()
-my_tax()
-leapcomm()
-while1()
-woddeven()
-countvar()
-secret_num()
+"""for loop"""
+
+def for1():
+	
+	for i in range(10):
+		print("The value of i is currently", i)
+
+def for2():
+
+	for i in range(2, 8):
+		print('Value is:', i)
+
+def for3():
+
+	for i in range(2,8,3):
+		print("Value:", i)
+
+
+def for4():
+	
+	power = 1
+	for expo in range(16):
+		print("2 to the power of", expo, "is", power)
+		power *= 2
+
+def my_mississipi():
+
+	for i in range (1,6):
+		print(i, 'mississipi')
+		time.sleep(1)
+	print('Ready or not here I come!')
+
+def break_cont():
+
+	print("The break instruction:")
+	for i in range(1, 6):
+    		if i == 3:
+        		break
+    		print("Inside the loop.", i)
+	print("Outside the loop.")
+
+
+# continue - example
+
+	print("\nThe continue instruction:")
+	for i in range(1, 6):
+    		if i == 3:
+        		continue
+    		print("Inside the loop.", i)
+	print("Outside the loop.")
+
+
+
+
+
+#if_1()
+#minmax()
+#spathi()
+#my_tax()
+#leapcomm()
+#while1()
+#woddeven()
+#countvar()
+#secret_num()
+#for1()
+#for2()
+#for3()
+#for4()
+#my_mississipi()
+break_cont()
