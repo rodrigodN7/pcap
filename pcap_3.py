@@ -286,7 +286,7 @@ def knot_km():
 				clear()
 				data = float(number)
 				print(data, 'knots = ',round(data * 1.852, 2), 'kph')
-				input('Press any key to continue!')
+				input('Press enter to continue!')
 			except:
 				clear()
 				print('Invalid data')
@@ -296,7 +296,114 @@ def knot_km():
 	input('Bye!\n Press enter to finish')
 	clear()
 
+def vow_eater():
+	
+	try:
+		my_in = str(input('Enter a word:'))
+		my_in = my_in.upper()
+
+		for i in my_in:
+
+			if i == 'A':
+				continue
+			elif i == 'E':
+				continue
+			elif i == 'I':
+				continue
+			elif i == 'O':
+				continue
+			elif i == 'U':
+				continue
+			else:
+				print(i)
+	except:
+		print('Error')
 			
+def vow_eater2():
+
+	try:
+		word_without_vowels = ""
+		my_in = str(input('Enter a word:'))
+		my_in = my_in.upper()
+
+		for i in my_in:
+
+			if i == 'A':
+				continue
+			elif i == 'E':
+				continue
+			elif i == 'I':
+				continue
+			elif i == 'O':
+				continue
+			elif i == 'U':
+				continue
+			else:
+				word_without_vowels += i
+		print(word_without_vowels)
+    
+	except:
+		print('Error')
+
+def while_else():
+
+        i = 1
+        while i < 5:
+                print(i)
+                i += 1
+        else:
+                print("else:", i)
+
+def for_else():
+
+	for i in range(5):
+		print(i)
+	else:
+		print('else', i)
+
+def block_pyr():
+	
+	blocks = int(input("Enter the number of blocks: "))
+
+	height = 0
+	in_layer = 1
+	
+	while in_layer <= blocks:
+		
+		height  += 1
+		blocks -= in_layer
+		in_layer += 1
+
+	print('The height of the pyramid:', height)
+
+def collatz_hyp():
+	
+	#1. Take any non-negative and non-zero integer number and name it c0.
+	#2. If it's even, evaluate a new c0 as c0%2
+	#3. Otherwise, if it's odd, evaluate a new c0 as 3 x c0 + 1
+	#4. If c0 !=, go back to point 2
+
+	c0 = int(input("Enter c0: "))
+	
+	if c0 > 1:
+		steps = 0
+		
+		while c0 != 1:
+			if c0 % 2 != 0:
+				cnew = 3 * c0 + 1
+			else:
+				cnew = c0 // 2
+			print(c0)
+			c0 = cnew
+			steps += 1
+		print("steps =", steps)
+	else:
+		print("Bad c0 value")
+
+
+def computer_logic():
+
+	print()
 #if_1()
 #minmax()
 #spathi()
@@ -312,4 +419,10 @@ def knot_km():
 #for4()
 #my_mississipi()
 #break_cont()
-knot_km()
+#knot_km()
+#vow_eater()
+#vow_eater2()
+#while_else()
+#for_else()
+#block_pyr()
+collatz_hyp()
