@@ -403,7 +403,111 @@ def collatz_hyp():
 
 def computer_logic():
 
-	print()
+	print("""
+############
+and operator
+############
+
+A       B       A and B
+0       0          0
+1       0          0
+0       1          0
+1       1          1
+
+############
+or opeartor
+############
+
+A       B       A or B
+0       0          0
+1       0          1
+0       1          1
+1       1          1
+
+############
+xor operator
+############
+
+A       B       A xor B
+0       0          0
+1       0          1
+0       1          1
+1       1          0
+
+############
+ot operator
+############
+A	not A
+0	1
+1	0
+
+#################
+Bitwise operators
+#################
+
+&	Ampersand	bitwise conjunction
+|	Bar		bitwise disjunction
+~	Tilde		bitwise negation
+^	Caret		bitwise exclusive or (xor)
+
+& requires exactly two 1s to provide 1 as the result.
+| requires at least one 1 to provide 1 as the result.
+^ requires exactly one 1 to provide 1 as the result.
+Note!: the arguments of these operatorss must be integers; we must not use floats here.
+""")
+
+	i = 2
+	e = 3
+	print(i & e)
+	print(i | e)
+	print(i ^ e)
+	print("""
+
+	i = 00000010
+	e = 00000011
+	& = 00000010
+	| = 00000011
+	^ = 00000001  
+""")
+	print(~0b00000111)
+	print('Binary left shift and binary right shift')
+	var = 7
+	var_right = var >> 1
+	var_left = var << 2
+	print(bin(var), bin(var_left), bin(var_right))
+
+
+def lists():
+	#indexing lists
+	nums_1 = [10,5,7,2,1]
+	print(nums_1)
+	#assign new value to the first element of the list
+	nums_1[0] = 111
+	print(nums_1) # prints the whole list
+	#value of fifth element to be copied to the second element
+	nums_1[1] = nums_1[4]
+	print(nums_1)
+	#accessing list contents
+	print(nums_1[2])
+	#len() function takes the list's name as an argument
+	#and returns the number of elements currently stored inside the list
+	print(len(nums_1))
+	#removing elements from a list
+	del nums_1[1]
+	print(len(nums_1))
+	print(nums_1)	
+	#NOTE!: you can't access an element which doesn't exist
+	#print(nums_1[4])
+	#negative indices are legal
+	print(nums_1[-3])
+	numbers = []
+
+	for i in range(100):
+		numbers.append(i)
+#	print(numbers)
+
+
+
 #if_1()
 #minmax()
 #spathi()
@@ -425,4 +529,6 @@ def computer_logic():
 #while_else()
 #for_else()
 #block_pyr()
-collatz_hyp()
+#collatz_hyp()
+#computer_logic()
+lists()
