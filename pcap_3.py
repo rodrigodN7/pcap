@@ -500,13 +500,53 @@ def lists():
 	#print(nums_1[4])
 	#negative indices are legal
 	print(nums_1[-3])
+	
+	#append() and insert() methods
+	#list.append(value)
+	#list.insert(location, value)
+	nums_1.append(9)
+	print(nums_1)
+	print(len(nums_1))	
+	nums_1.insert(0, 17)	
+	print(nums_1)
+	print(len(nums_1))
+	
+
 	numbers = []
-
-	for i in range(100):
+	for i in range(17):
 		numbers.append(i)
-#	print(numbers)
+	print(numbers)
 
+	#swap list elements to reverse their order.
+	my_list = [10, 1, 8, 3, 5]
+	print(my_list)
+	my_list[0], my_list[4] = my_list[4], my_list[0]
+	my_list[1], my_list[3] = my_list[3], my_list[1]
+	print(my_list)
+	#using for loop to swap the list
+	for i in range(len(my_list) // 2):
+		my_list[i], my_list[len(my_list) -i - 1] = my_list[len(my_list) -i - 1], my_list[i]
+	print(my_list)
 
+	#lists can beindexed
+	my_list = [1, 'a', ["list", 64, [0, 1], False]]
+	print(len(my_list))
+	print(my_list)
+
+def the_beatles():
+	beatles = []
+	beatles.append('Jhon Lenon')
+	beatles.append('Paul McCartney')
+	beatles.append('George Harrison')
+	
+	for members in range(2):
+		beatles.append(input('New band member: '))
+	
+	print(beatles)
+	del beatles[-1]
+	del beatles[-1]
+	beatles.insert(0, 'Ringo Starr')
+	print('The fab:', len(beatles), beatles)
 
 #if_1()
 #minmax()
@@ -531,4 +571,5 @@ def lists():
 #block_pyr()
 #collatz_hyp()
 #computer_logic()
-lists()
+#lists()
+#the_beatles()
