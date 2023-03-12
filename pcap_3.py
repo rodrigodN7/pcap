@@ -548,6 +548,48 @@ def the_beatles():
 	beatles.insert(0, 'Ringo Starr')
 	print('The fab:', len(beatles), beatles)
 
+
+def bubble_sort():
+
+	my_list = [8,10,6,2,4]
+	swapped = True
+
+	while swapped:
+		swapped = False
+		for i in range(len(my_list) - 1):
+			if my_list[i] > my_list[i + 1]:
+				swapped = True
+				my_list[i], my_list[i + 1] = my_list[i + +1], my_list[i]
+	print(my_list)
+
+
+def bubble_sort_interactive():
+
+	my_list = []
+	swapped = True
+	num = int(input('How many elements do you want to sort'))
+
+	for i in range(num):
+		val = float(input('Enter a list element:'))
+		my_list.append(val)
+
+	while swapped:
+		swapped = False
+		for i in range(len(my_list) - 1):
+			if my_list[i] > my_list[i + 1]:
+				swapped = True
+				my_list[i], my_list[i + 1] = my_list[i + +1], my_list[i]
+	print('\nSorted:')
+	print(my_list)
+
+def sort_reverse_method():
+	my_list = [8,10,6,2,4]
+	print(my_list)
+	my_list.sort()
+	print(my_list)
+	my_list.reverse()
+	print(my_list)
+
 #if_1()
 #minmax()
 #spathi()
@@ -573,3 +615,6 @@ def the_beatles():
 #computer_logic()
 #lists()
 #the_beatles()
+#bubble_sort()
+#bubble_sort_interactive()
+sort_reverse_method()
