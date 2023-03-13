@@ -590,6 +590,106 @@ def sort_reverse_method():
 	my_list.reverse()
 	print(my_list)
 
+"""Operation on lists"""
+
+def operation_lists():
+
+	list_1 = [1]
+	list_2 = list_1
+	list_1[0] = 2
+	print(list_1,list_2)
+
+	#slices
+	#A slice is an element of Python syntax that allows you to make a brand new copy of a list, or parts of a list
+	#copies the list's contents, not the list's name.
+	
+	list_1 = [1]
+	list_2 = list_1[:]
+	list_1[0] = 2
+	print(list_1, list_2)
+	
+	my_list = [10,8,6,4,2]
+	new_list = my_list[1:3]
+	print(my_list,new_list)		
+	my_list = [10,7,4,3,1]
+	print(my_list,new_list)
+	
+	#negative indices
+	new_list = my_list[1:-1]
+	print(new_list)		
+	#if the start specifies an element lying further than the one described by the end (from the list beginning), the slice will be empty:
+	new_list = my_list[-1:1]
+	print(new_list)		
+	my_list = [10,7,4,3,1]
+	new_list = my_list[:3]
+	print(new_list)		
+	new_list = my_list[3:]
+	print(new_list)		
+	new_list = my_list[1:len(my_list)]
+	print(new_list)		
+	new_list = my_list[:] #this copies the whole list
+	print(new_list)
+	#delete slices
+	del my_list[1:3]
+	print(my_list)		
+	del my_list[:]
+	print(my_list)
+	my_list = [1,2,3]
+	del my_list
+	#print(my_lismy_listt) # this generates an error
+	
+def in_not_operators():
+	
+	my_list = [0, 7, 3, 12, 8]
+	print(5 in my_list)
+	print(5 not in my_list)
+	print(12 in my_list)
+
+def list_greater_value(): 
+	#using a list will get greater value from that list
+	my_list = [2,17, 11, 3, 5, 1, 9, 7, 15,13]
+	largest = my_list[0]
+
+	for i in range(1, len(my_list)):
+		if my_list[i] > largest:
+			largest = my_list[i]
+	print(largest)
+
+def list_greater_value_1():
+        #using a list will get greater value from that list
+        my_list = [2,17, 11, 3, 5, 1, 9, 7, 15,13]
+        largest = my_list[0]
+
+        for i in my_list:
+                if i > largest:
+                        largest = i
+        print(largest)
+
+def list_greater_value_2():
+        #using a list will get greater value from that list
+        my_list = [2,17, 11, 3, 5, 1, 9, 7, 15,13]
+        largest = my_list[0]
+
+        for i in my_list[1:]:
+                if i > largest:
+                        largest = i
+        print(largest)
+
+def find_location_list():
+	my_list = [1,2,3,4,5,6,7,8,9,10]
+	to_find = 7
+	found = False
+
+	for i in range(len(my_list)):
+		found = my_list[i] == to_find
+		if found:
+			break
+
+	if found:
+		print('Elements found at index:', i)
+	else:
+		print('absent')
+	
 #if_1()
 #minmax()
 #spathi()
@@ -597,16 +697,7 @@ def sort_reverse_method():
 #leapcomm()
 #while1()
 #woddeven()
-#countvar()
-#secret_num()
-#for1()
-#for2()
-#for3()
-#for4()
-#my_mississipi()
-#break_cont()
-#knot_km()
-#vow_eater()
+#countvavow_eater()
 #vow_eater2()
 #while_else()
 #for_else()
@@ -617,4 +708,9 @@ def sort_reverse_method():
 #the_beatles()
 #bubble_sort()
 #bubble_sort_interactive()
-sort_reverse_method()
+#sort_reverse_method()
+#operation_lists()
+#in_not_operators()
+#list_greater_value()
+#list_greater_value_2()
+find_location_list()
