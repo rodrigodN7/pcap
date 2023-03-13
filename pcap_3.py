@@ -701,7 +701,36 @@ def remove_repeated():
 	print("The list with unique elements only:")
 	print(my_list)
 
+
+def list_comprehensions():
+	#A list comprehension is actually a list, but created on-the-fly during program execution, and is not described statically.
+
+	squares = [pow(x,2) for x in range(10)]
+	print(squares)
+
+	twos = [pow(2,i) for i in range(15)]
+	print(twos)
+
+	odds = [x for x in squares if x % 2 != 0]
+	print(odds)
+
+def array_2d():#two dimwnsion array
 	
+	board = [['EMPTY' for i in range(8)] for j in range(8)]
+	print(board)
+
+
+def array_3d():
+
+	rooms = [[[False for r in range(20)] for f in range(15)] for t in range(3)]
+	print(rooms[0])
+
+def my_test():
+
+	my_list = [[0,1,2,3] for i in range(2)]
+	print(my_list)
+	print(my_list[2][0])
+
 #if_1()
 #minmax()
 #spathi()
@@ -726,4 +755,7 @@ def remove_repeated():
 #list_greater_value()
 #list_greater_value_2()
 #find_location_list()
-remove_repeated()
+#remove_repeated()
+#list_comprehensions()
+#array_3d()
+my_test()
