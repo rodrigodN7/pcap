@@ -141,3 +141,114 @@ for i in range(len(test_data)):
 		print('ok')
 	else:
 		print('Failed')
+
+"""Functions and scopes"""
+
+#the scope of a function's parameter is the functions itself. The parameter is inaccessible outsid ethe function.
+def scope_test():
+	xx = 77
+
+scope_test()
+#print(xx) #this prints an error as the variable xx is out of scope of the function 
+def scope_test1():
+	print('Do I kn ow this variable?', my_var1)
+my_var1 = 7
+scope_test1() #a variable existing outside a function has scope inside the function's body.
+print(my_var1)
+
+def scope_test2():
+	varx = 2
+	print('Var value:', varx)
+
+varx = 7
+scope_test2()
+print(varx)
+
+"""Functions and scopes: the global keyword"""
+
+def global_func():
+	global varz #forces python to refrain from creating a new avriable inside the function
+	varz = 	7
+	print('DO i know that varz:', varz)
+
+varz = 1
+global_func()
+print(varz)
+
+
+
+"""How the function interacts with its arguments"""
+def func_inter(n):
+	print('I got', n)
+	n += 1
+	print('I have:', n)
+
+varp = 7
+func_inter(varp)
+print(varp)
+
+def factorial_function(m):
+	if m < 0:
+		return None
+	if m < 2:
+		return 1
+	product = 1
+
+	for i in range(2, m + 1):
+		product *= i
+	return product
+
+for z in range(10):
+	print(z,'! = ', factorial_function(z))
+
+"""fibonacci numbers"""
+def fib_nums(v):
+	if v < 1:
+		return None
+	if v < 3:
+		return 1
+
+	elem_1 = elem_2 = 1
+	the_sum = 0
+	
+	for i in range (3, v + 1):
+		the_sum = elem_1 + elem_2
+		elem_1, elem_2 = elem_2, the_sum
+	return the_sum
+
+for v in range(1,10):
+	print(v, "->", fib_nums(v))
+
+"""Recursion"""
+#technique where a function invokes itself
+
+def fib_recursion(b):
+	if b < 1:
+		return None #terminate recursion
+	if b < 3:
+		return 1
+	return fib_recursion(b - 1) + fib_recursion(b - 2) #recursive call
+for g in range(10):
+	print(fib_recursion(g))
+
+
+def countdown(k):
+	print(k)
+	if k == 0:
+		return #terminate recursion
+	else:
+		countdown(k - 1) #recursive call
+
+countdown(7)
+
+def factorial_recursion(f):
+	if f == 1:
+		return 1
+	else:
+		return f * factorial_recursion(f - 1)
+
+print(factorial_recursion(7))
+
+def recursion_error(h)
+	return h * recursion_error(h - 1)
+print(recursion_error)# this is an error as function has no termination condition.
