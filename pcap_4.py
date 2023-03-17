@@ -248,7 +248,112 @@ def factorial_recursion(f):
 		return f * factorial_recursion(f - 1)
 
 print(factorial_recursion(7))
-
-def recursion_error(h)
+def recursion_error(h):
 	return h * recursion_error(h - 1)
-print(recursion_error)# this is an error as function has no termination condition.
+#print(recursion_error)# this is an error as function has no termination condition.
+
+"""Sequence types and mutability"""
+
+#A sequence type is a type of data in Python which is able to store more than one value (or less than one, as a sequence may be empty), and these values can be sequentially (hence the name) browsed, element by element.
+
+#As the for loop is a tool especially designed to iterate through sequences, we can express the definition as: a sequence is data which can be scanned by the for loop.
+
+#The second notion − mutability − is a property of any Python data that describes its readiness to be freely changed during program execution. There are two kinds of Python data: mutable and immutable.
+
+#Mutable data can be freely updated at any time − we call such an operation in situ.
+
+
+"""Tuples"""
+# tuples prefer to use parenthesis, whereas lists like to see brackets, although it's also possible to create a tuple just from a set of values separated by commas.
+
+empty_tuple = ()
+#print(empty_tuple()) #this generates an error
+one_elem_tuple = (1,)
+print(one_elem_tuple)
+#or
+one_elem_tuple1 = 1.,
+print(one_elem_tuple1)
+my_tup1 = (1,2,4,8)
+my_tup2 = 1., .5, .25, .125, 2, 'Alpha', "Beta", True, 0b001001, [17,18,18], (20,21,22)
+print(my_tup2)
+#get elements from a tuple
+print(my_tup2[0])
+print(my_tup2[-1])
+print(my_tup2[1:])
+print(my_tup2[-2:])
+print(my_tup2[:])
+
+for elem in my_tup2:
+	print(elem)
+#you can't modify a tuple's contents! it is not a list!
+#my_tup1.append(777) this generate san error
+#del my_tup1[0]#this also generates an error
+print(my_tup1)
+
+#get len of a tuple
+print(len(my_tup1))
+#operator + can join tuples together
+t1 = my_tup1 + (1000,10000)
+print(t1)
+#operator * can multiply tuples
+t2 = my_tup1 * 3
+print(t2)
+#in and not in works the same as in list
+print(7 in my_tup1)
+print(8 in my_tup1)
+
+"""Dictionaries"""
+#The dictionary is another Python data structure. It's not a sequence type (but can be easily adapted to sequence processing) and it is mutable.
+dictionary = {'cat': 'chat', 'dog':'chien', 'horse': 'cheval'}
+phone_numbers = {'boss': 5551234567, 'Suzy': 22657854312}
+empty_dictionary = {}
+
+print(dictionary)
+print(phone_numbers)
+print(empty_dictionary)
+
+#In Python's world, the word you look for is named a key. The word you get from the dictionary is called a value.
+#This means that a dictionary is a set of key-value pairs. Note:
+
+ #   each key must be unique − it's not possible to have more than one key of the same value;
+ #   a key may be any immutable type of object: it can be a number (integer or float), or even a string, but not a list;
+ #   a dictionary is not a list − a list contains a set of numbered values, while a dictionary holds pairs of values;
+ #   the len() function works for dictionaries, too − it returns the number of key-value elements in the dictionary;
+ #   a dictionary is a one-way tool − if you have an English-French dictionary, you can look for French equivalents of English terms, but not vice versa. 
+
+#NOTE! In Python 3.6x dictionaries have become ordered collections by default. Your results may vary depending on what Python version you're using.
+
+#If you want to get any of the values, you have to deliver a valid key value:
+print(dictionary['cat'])
+print(phone_numbers['Suzy'])
+
+#you mustn't use a non-existent key. Trying something like this:
+#print(phone_numbers['president']) #this generates an error
+
+#search for some french words.
+
+dictionary = {'cat': 'chat', 'dog':'chien', 'horse': 'cheval'}
+words = ['cat', 'lion', 'horse']
+
+for word in words:
+	if word in dictionary:
+		print(word, '->', dictionary[word])
+	else:
+		print(word, 'is not in the dictionary')
+
+#NOTE! When you write a big or lengthy expression, it may be a good idea to keep it vertically aligned. This is how you can make your code more readable and more programmer-friendly, e.g.:
+
+
+# Example 1:
+my_dictionary = {
+              "cat": "chat",
+              "dog": "chien",
+              "horse": "cheval"
+}
+# Example 2:
+phone_nums = {'boss': 5551234567,
+              'Suzy': 22657854310
+}
+ 
+print(my_dictionary)
+print(phone_nums)
