@@ -302,6 +302,15 @@ print(t2)
 print(7 in my_tup1)
 print(8 in my_tup1)
 
+#you can delete a tuple as whole
+del my_tup1
+#print(my_tup1)#this generates an error
+
+#tuple built-in function. useful when you want to convert certain iterable (e.g., a list, range, string, etc.) to a tuple.
+my_tuple7 = tuple((1,2,'string', 'other string'))
+print(my_tuple7)
+my_list7 = [2,7,9]
+
 """Dictionaries"""
 #The dictionary is another Python data structure. It's not a sequence type (but can be easily adapted to sequence processing) and it is mutable.
 dictionary = {'cat': 'chat', 'dog':'chien', 'horse': 'cheval'}
@@ -357,3 +366,94 @@ phone_nums = {'boss': 5551234567,
  
 print(my_dictionary)
 print(phone_nums)
+
+
+"""Dictionary methods and functions"""
+
+
+#Can dictionaries be browsed using the for loop, like lists or tuples?
+
+#No and yes.
+
+#No, because a dictionary is not a sequence type − the for loop is useless with it.
+
+#Yes, because there are simple and very effective tools that can adapt any dictionary to the for loop requirements (in other words, building an intermediate link between the dictionary and a temporary sequence entity).
+
+#using the method keys(). 
+#No, because a dictionary is not a sequence type − the for loop is useless with it.
+
+#Yes, because there are simple and very effective tools that can adapt any dictionary to the for loop requirements (in other words, building an intermediate link between the dictionary and a temporary sequence entity).
+
+#using the method keys(). 
+#The method returns an iterable object consisting of all the keys gathered within the dictionary. Having a group of keys enables you to access the whole dictionary in an easy and handy way.
+
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval",'eagle': 'aguile'}
+ 
+for key in dictionary.keys():
+	print(key, "->", dictionary[key])
+
+#using the method items():
+#The method returns tuples (this is the first example where tuples are something more than just an example of themselves) where each tuple is a key-value pair.
+for english, french in dictionary.items():
+	print(english, "->", french)
+
+#Modifying and adding values
+#dictionaries are fully mutable
+dictionary['cat'] = 'minou'
+print(dictionary)
+
+#sorting the dictionary
+for key in sorted(dictionary.keys()):
+	print(key, '->', dictionary[key])
+
+#the values() method
+for french in dictionary.values():
+	print(french)
+
+#adding a new key
+#you only have to assign a value to a new, previously non-existent key.
+#Note: this is very different behavior compared to lists, which don't allow you to assign values to non-existing indices.
+dictionary['swan'] = 'cygne'
+print(dictionary)
+print(sorted(dictionary))#prints sorted values
+
+#inserting an item to a dictionary by using the update()
+dictionary.update({'duck':'canard'})
+print(dictionary)
+print(sorted(dictionary))#prints sorted values
+
+#removing a key
+#Note: removing a non-existing key causes an error.
+del dictionary['dog']
+print(dictionary)
+
+#To remove the last item in a dictionary, you can use the popitem() method:
+dictionary.popitem()
+print(dictionary)
+
+def tup_dict():
+	
+	school_class = {}
+
+	while True:
+		name = input("Enter the student's name: ")
+		if name == '':
+			break
+
+		score = int(input("Enter the student's score (0-10): "))
+		if score not in range(0, 11):
+			break
+    
+		if name in school_class:
+			school_class[name] += (score,)
+		else:
+			school_class[name] = (score,)
+        
+	for name in sorted(school_class.keys()):
+		adding = 0
+		counter = 0
+		for score in school_class[name]:
+			adding += score
+			counter += 1
+		print(name, ":", adding / counter)
+tup_dict()
