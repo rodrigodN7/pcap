@@ -135,7 +135,7 @@ test_data = [1900, 2000, 2016, 1987]
 test_results = [False, True, True, False]
 for i in range(len(test_data)):
 	yr = test_data[i]
-	print(yr, '->', end='')
+	print(yr, "->", end="")
 	result = is_year_leap(yr)
 	if result == test_results[i]:
 		print('ok')
@@ -430,6 +430,12 @@ print(dictionary)
 #To remove the last item in a dictionary, you can use the popitem() method:
 dictionary.popitem()
 print(dictionary)
+#copy method, copies a dictionary
+dictionary2 = dictionary.copy()
+print('dict 2:', dictionary2)
+#clear method
+dictionary.clear()
+print(dictionary)
 
 def tup_dict():
 	
@@ -457,3 +463,108 @@ def tup_dict():
 			counter += 1
 		print(name, ":", adding / counter)
 tup_dict()
+
+"""Exceptions"""
+# try keyword – this is the place where you put the code you suspect is risky and may be terminated in case of error; note: this kind of error is called an exception, while the exception occurrence is called raising – we can say that an exception is (or was) raised;
+#except keyword is designed to handle the exception; it's up to you what you want to do here: you can clean up the mess or you can just sweep the problem under the carpet (although we would prefer the first solution).
+
+#the try keyword marks the place where you try to do something without permission;
+#the except keyword starts a location where you can show off your apology talents.
+
+def try_excp1():
+
+	try:
+		value = int(input('Enter a natural number: '))
+		print('The reciprocal of', value, 'is', 1/value)        
+	except:
+		print('I do not know what to do.')
+
+
+try_excp1()
+
+"""Two exceptions after one try"""
+
+def try_excp2():
+	try:
+		value = int(input('Enter a natural number: '))
+		print('The reciprocal of', value, 'is', 1/value)        
+	except ValueError:
+		print('I do not know what to do.')    
+	except ZeroDivisionError:
+		print('Division by zero is not allowed in our Universe.')
+
+try_excp2()
+
+"""default exception"""
+#The default except branch must be the last except branch. Always!
+
+def try_excp3():
+	try:
+		value = int(input('Enter a natural number: '))
+		print('The reciprocal of', value, 'is', 1/value)        
+	except ValueError:
+		print('I do not know what to do.')    
+	except ZeroDivisionError:
+		print('Division by zero is not allowed in our Universe.')    
+	except:
+		print('Something strange has happened here... Sorry!')
+"""Some useful exceptions"""
+#ZeroDivisionError
+#This appears when you try to force Python to perform any operation which provokes division in which the divider is zero, or is indistinguishable from zero. Note that there is more than one Python operator which may cause this exception to raise. Can you guess them all?
+
+#ValueError
+#Expect this exception when you're dealing with values which may be inappropriately used in some context. In general, this exception is raised when a function (like int() or float()) receives an argument of a proper type, but its value is unacceptable.
+
+#TypeError
+#This exception shows up when you try to apply a data whose type cannot be accepted in the current context. Look at the example:
+#You're not allowed to use a float value as a list index (the same rule applies to tuples, too). TypeError is an adequate name to describe the problem, and an adequate exception to raise.
+
+#AttributeError
+#This exception arrives – among other occasions – when you try to activate a method which doesn't exist in an item you're dealing with. 
+
+#SyntaxError
+#This exception is raised when the control reaches a line of code which violates Python's grammar. It may sound strange, but some errors of this kind cannot be identified without first running the code. This kind of behavior is typical of interpreted languages – the interpreter always works in a hurry and has no time to scan the whole source code. It is content with checking the code which is currently being run. 
+#It's a bad idea to handle this exception in your programs. You should produce code that is free of syntax errors, instead of masking the faults you’ve caused.
+
+#KeyboardInterrupt exception, which is raised when the user hits the interrupt key (CTRL-C or Delete).
+
+#KeyboardInterrupt exception, which is raised when the user hits the interrupt key (CTRL-C or Delete). 
+
+def funz():
+	print(var + 1, end = '')
+var = 1
+funz()
+print(var)
+#my_tuple = (1,2)
+#my_tuple[1] = my_tuple[1] + my_tuple[0]
+
+my_list = ['Mary', 'had', 'a', 'little', 'lamb']
+ 
+ 
+def my_list(my_list):
+#	del my_list[3]
+	my_list[3] = 'ram'
+ 
+#print(my_list(my_list))
+
+def tuns(x,y,z):
+	return x + 2 * y + 3 * z
+print(tuns(0, z =1, y = 3))
+
+def myinout(inp=2, out=3):
+	return inp * out
+print(myinout(out=2))
+
+
+other_dict = {'one': 'two', 'three': 'one', 'two': 'three'}
+v = other_dict['one']
+
+for k in range(len(other_dict)):
+	v = other_dict[v]
+ 
+print(v)
+
+ztup = (1, 2, 4, 8)
+ztup = ztup[1:-1]
+ztup = ztup[0]
+print(ztup)
