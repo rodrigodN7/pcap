@@ -14,8 +14,19 @@ for name in dir(math):
 print(math.sin(math.pi/2))
 
 #In the second method, the import's syntax precisely points out which module's entity (or entities) are acceptable in the code:
-from math import e
+from math import e, exp, log, pi, radians, degrees, sin, cos, tan, asin
 print(e)
+ad = 90
+ar = radians(ad)
+ad = degrees(ar)
+
+print(ad == 90)
+print(ar == pi / 2.)
+print(sin(ar) / cos(ar) == tan(ar))
+print(asin(sin(ar)) == ar)
+print(pow(e, 1) == exp(log(e)))
+print(pow(2,2) == exp(2 * log(2)))
+print(log(e, e) == exp(0))
 
 #Importing a module
 from os import *
