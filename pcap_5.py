@@ -69,21 +69,37 @@ for name in dir(estadistica):
 	print(name, end="\t")
 
 #the random() function
+#Te algoritm's are not random, they are deterministic and predictable!. Only those physical process those physical processes
+#which run completly out of our control (like the intensity of cosmic radiation) may be used as a source of actual random data.
+#Data produced by deterministic computers cannot be random in any way.
+#A random number generator takes a value called a seed, treats it as an input value, calculates a "random" number based on it
+#(the method depends on a chosen algorithm) and produces a new seed value.
+#The random factor of the process may be augmented by setting the seed with a number taken from the current time, this may ensure
+#that each program launch will start from different seed value(ergo, it will use different random numbers)
+
+#do not confuse random() function with the module random!
+#produces a float number x coming from the range (0.0, 1.0), in other words, (0.0 <= x < 1.0)
+
+#generate 8 random numbers.
 from random import random
-for i in range(5):
+print('\n+++++++')
+for i in range(7):
 	print(random())
+print('+++++++')
 
 #the seed function is able to directly set the generator's seed. We'll show you two of its variants:
 
    # seed() - sets the seed with the current time;
    # seed(int_value) - sets the seed with the integer value int_value.
-
+#pay attention! due the fact that the seed is always set with the same value (seed(0)), the sequence of generated values always look the same.
 from random import random, seed
-
-seed(0)
+print('\n+++++++\nseed\n+++++++')
+#remeber, seed with a value will deny the random functionality, it means always get same value, no random values
+#seed(0)
 
 for i in range(5):
     print(random())
+print('+++++++')
 
 """randrange() and randinit() functions"""
 
@@ -113,5 +129,27 @@ print(randrange(0, 1), end=' ')
 print(randrange(0, 1, 1), end=' ')
 print(randint(0, 1))
 
+#The previous functions have one important disadvantage - they may produce repeating values even if the number of subsequent invocations is not greater than the width of the specified range.
+
+#Look at the code below - the program very likely outputs a set of numbers in which some elements are not unique:
+
 for i in range(5):
-        print(randrange(1,7), end=' ')
+        print(randrange(1,7), end=',')
+
+#choice() and sample() functions
+
+# choice(sequence)
+# sample(sequence, elements_to_choose)
+
+#The first variant chooses a "random" element from the input sequence and returns it.
+#The second one builds a list (a sample) consisting of the elements_to_choose element "drawn" from the input sequence.
+
+#In other words, the function chooses some of the input elements, returning a list with the choice. The elements in the sample are placed in random order. Note: the elements_to_choose must not be greater than the length of the input sequence.
+print('\n+++++++')
+from random import choice, sample
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print(choice(my_list))
+print(sample(my_list, 5))
+print(sample(my_list, 10))
