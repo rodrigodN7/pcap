@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 
-
+##Working with standard modules
+#the dir() function reveal all the names provided through a particular module.
+#
+import plotly
 import math
+print(dir())
+print(dir(plotly))
+
+for name in dir(math):
+    print(name, end="\t")
 
 print(math.sin(math.pi/2))
 
