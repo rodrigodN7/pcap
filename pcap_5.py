@@ -201,3 +201,21 @@ for atr in python_version_tuple():
     print(atr)
 #You can read all about all standard Python modules here:
 #https://docs.python.org/3/py-modindex.html
+
+
+########################
+# Modules and packages #
+########################
+
+##a module is a kind of container filled with functions - you can pack as many functions as 
+#you want into one module and distribute it across the world;
+#of course, it's generally a good idea not to mix functions with different application areas 
+#within one module (just like in a library - nobody expects scientific works to be put among 
+#comic books), so group your functions carefully and name the module containing them in a clear 
+#and intuitive way (e.g., don't give the name arcade_games to a module containing functions 
+#intended to partition and format hard disks)
+#making many modules may cause a little mess - sooner or later you'll want to group your 
+#modules exactly in the same way as you've previously grouped functions 
+#- is there a more general container than a module?
+#yes, there is - it's a package; in the world of modules, a package plays a similar role to a 
+#folder/directory in the world of files.
